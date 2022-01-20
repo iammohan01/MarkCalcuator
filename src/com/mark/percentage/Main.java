@@ -7,6 +7,15 @@ public class Main {
 
     public static void main(String[] args) {
 	// Welcome
+        System.out.println(" ____                                   __                                ____              ___                    ___             __                   \n" +
+                "/\\  _`\\                                /\\ \\__                            /\\  _`\\           /\\_ \\                  /\\_ \\           /\\ \\__                \n" +
+                "\\ \\ \\L\\ \\ __   _ __   ___     __    ___\\ \\ ,_\\    __       __      __    \\ \\ \\/\\_\\     __  \\//\\ \\     ___   __  __\\//\\ \\      __  \\ \\ ,_\\   ___   _ __  \n" +
+                " \\ \\ ,__/'__`\\/\\`'__\\/'___\\ /'__`\\/' _ `\\ \\ \\/  /'__`\\   /'_ `\\  /'__`\\   \\ \\ \\/_/_  /'__`\\  \\ \\ \\   /'___\\/\\ \\/\\ \\ \\ \\ \\   /'__`\\ \\ \\ \\/  / __`\\/\\`'__\\\n" +
+                "  \\ \\ \\/\\  __/\\ \\ \\//\\ \\__//\\  __//\\ \\/\\ \\ \\ \\_/\\ \\L\\.\\_/\\ \\L\\ \\/\\  __/    \\ \\ \\L\\ \\/\\ \\L\\.\\_ \\_\\ \\_/\\ \\__/\\ \\ \\_\\ \\ \\_\\ \\_/\\ \\L\\.\\_\\ \\ \\_/\\ \\L\\ \\ \\ \\/ \n" +
+                "   \\ \\_\\ \\____\\\\ \\_\\\\ \\____\\ \\____\\ \\_\\ \\_\\ \\__\\ \\__/.\\_\\ \\____ \\ \\____\\    \\ \\____/\\ \\__/.\\_\\/\\____\\ \\____\\\\ \\____/ /\\____\\ \\__/.\\_\\\\ \\__\\ \\____/\\ \\_\\ \n" +
+                "    \\/_/\\/____/ \\/_/ \\/____/\\/____/\\/_/\\/_/\\/__/\\/__/\\/_/\\/___L\\ \\/____/     \\/___/  \\/__/\\/_/\\/____/\\/____/ \\/___/  \\/____/\\/__/\\/_/ \\/__/\\/___/  \\/_/ \n" +
+                "                                                           /\\____/                                                                                      \n" +
+                "                                                           \\_/__/                                                                                       ");
         System.out.println("Enter Your Name :");
         Scanner input = new Scanner(System.in);
         String nameOfPerson = input.next();
@@ -115,11 +124,11 @@ public class Main {
         System.out.println(sub6Name + " Mark = " + sub6Mark );
         System.out.println(sub7Name + " Mark + " + sub7Mark );
 
-        //Total Marks
+        //Total
         int total= sub1Mark + sub2Mark + sub3Mark + sub4Mark + sub5Mark + sub6Mark + sub7Mark ;
         int percentage = total/totalMarkOfAll*100 ;
         System.out.println("Your ( " + nameOfPerson.toUpperCase() + " ) Total Marks = " + total );
-        System.out.println("Your ( " + nameOfPerson.toUpperCase() + " ) Percentage = " + percentage);
+        System.out.println("Your ( " + nameOfPerson.toUpperCase() + " ) Percentage = " + percentage );
 
 
 
