@@ -31,7 +31,7 @@ public class Main {
         System.out.println(noOfPapers + " Papers . Is that correct ? If correct, Type " + '"' + '1' + '"' + ",  Else wrong , press any number ");
 
         //confirmation
-        byte get1 = input.nextByte();
+        float get1 = input.nextFloat();
         String wrong;
         wrong = "You Entered Wrong No of paper . so please restart program ";
         String confirmation = get1 != 1 ? wrong : "ok. Now Enter Full Mark Of Single Paper :";
@@ -39,7 +39,7 @@ public class Main {
         //boolean = confirmation == "ok" ?  ;
 
         // Total Mark of single paper
-        byte totalMarks1paper = input.nextByte();
+        int totalMarks1paper = input.nextInt();
         int totalMarkOfAll = totalMarks1paper * noOfPapers;
         System.out.println(totalMarkOfAll + " was your total marks . Now Enter Your 1st subject Name : ");
 
@@ -47,7 +47,7 @@ public class Main {
         String sub1Name = input.next();
         sub1Name = sub1Name.toUpperCase();
         System.out.println("Enter Your " + sub1Name + " mark :");
-        byte sub1Mark = input.nextByte();
+        float sub1Mark = input.nextFloat();
 
 
         if (sub1Mark <= totalMarks1paper) {
@@ -61,7 +61,7 @@ public class Main {
         String sub2Name = input.next();
         sub2Name = sub2Name.toUpperCase();
         System.out.println("Enter Your " + sub2Name + " mark :");
-        byte sub2Mark = input.nextByte();
+        float sub2Mark = input.nextFloat();
 
         if (sub2Mark <= totalMarks1paper) {
             System.out.println(sub1Name + " Mark = " + sub1Mark);
@@ -74,8 +74,7 @@ public class Main {
         String sub3Name = input.next();
         sub3Name = sub3Name.toUpperCase();
         System.out.println("Enter Your " + sub3Name + " mark :");
-        byte sub3Mark = input.nextByte();
-
+        float sub3Mark = input.nextFloat();
         if (sub3Mark <= totalMarks1paper) {
             System.out.println(sub1Name + " Mark = " + sub1Mark);
             System.out.println(sub2Name + " Mark = " + sub2Mark);
@@ -88,7 +87,7 @@ public class Main {
         String sub4Name = input.next();
         sub4Name = sub4Name.toUpperCase();
         System.out.println("Enter Your " + sub4Name + " mark :");
-        byte sub4Mark = input.nextByte();
+        float sub4Mark = input.nextFloat();
 
         if (sub4Mark <= totalMarks1paper) {
             System.out.println(sub1Name + " Mark = " + sub1Mark);
@@ -104,7 +103,7 @@ public class Main {
             String sub5Name = input.next();
             sub5Name = sub5Name.toUpperCase();
             System.out.println("Enter Your " + sub5Name + " mark :");
-            byte sub5Mark = input.nextByte();
+            float sub5Mark = input.nextFloat();
 
             if (sub5Mark <= totalMarks1paper) {
                 System.out.println(sub1Name + " Mark = " + sub1Mark);
@@ -121,7 +120,7 @@ public class Main {
                 String sub6Name = input.next();
                 sub6Name = sub6Name.toUpperCase(Locale.ROOT);
                 System.out.println("Enter Your " + sub6Name + " mark : ");
-                byte sub6Mark = input.nextByte();
+                float sub6Mark = input.nextFloat();
 
                 if (sub6Mark <= totalMarks1paper) {
                     System.out.println(sub1Name + " Mark = " + sub1Mark);
@@ -138,7 +137,7 @@ public class Main {
                     String sub7Name = input.next();
                     sub7Name = sub7Name.toUpperCase();
                     System.out.println("Enter Your " + sub7Name + " mark : ");
-                    byte sub7Mark = input.nextByte();
+                    float sub7Mark = input.nextFloat();
 
                     if (sub7Mark <= totalMarks1paper) {
                         System.out.println(sub1Name + " Mark = " + sub1Mark);
@@ -153,11 +152,11 @@ public class Main {
 
 
                         //Total
-                        int total = sub1Mark + sub2Mark + sub3Mark + sub4Mark + sub5Mark + sub6Mark + sub7Mark;
-                        double percentage = (total / (noOfPapers * totalMarks1paper)) ;
+                        float total = sub1Mark + sub2Mark + sub3Mark + sub4Mark + sub5Mark + sub6Mark + sub7Mark;
+                        float percentage = (total / (noOfPapers * totalMarks1paper)) ;
                         percentage *= 100 ;
-                        System.out.println("Your ( " + nameOfPerson.toUpperCase() + " ) Total Marks = " + total);
-                        System.out.println("Your ( " + nameOfPerson.toUpperCase() + " ) Percentage = " + percentage);
+                        System.out.println("Your ( " + nameOfPerson.toUpperCase() + " ) Total Marks = " + total + '/'+ totalMarkOfAll);
+                        System.out.println("Your ( " + nameOfPerson.toUpperCase() + " ) Percentage = " + percentage +" %");
 
 
                     }
