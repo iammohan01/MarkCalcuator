@@ -1,163 +1,50 @@
-package com.mark.percentage;
 
-import java.util.Locale;
+import java.util.Arrays;
 import java.util.Scanner;
 
-public class Main {
+public class Main{
 
-    public static void main(String[] args) {
-        // Welcome
-        String wrongMark = "You Entered Wrong Mark. Please restart the program ";
-        System.out.println(" ____                                   __                                ____              ___                    ___             __                   \n" +
-                "/\\  _`\\                                /\\ \\__                            /\\  _`\\           /\\_ \\                  /\\_ \\           /\\ \\__                \n" +
-                "\\ \\ \\L\\ \\ __   _ __   ___     __    ___\\ \\ ,_\\    __       __      __    \\ \\ \\/\\_\\     __  \\//\\ \\     ___   __  __\\//\\ \\      __  \\ \\ ,_\\   ___   _ __  \n" +
-                " \\ \\ ,__/'__`\\/\\`'__\\/'___\\ /'__`\\/' _ `\\ \\ \\/  /'__`\\   /'_ `\\  /'__`\\   \\ \\ \\/_/_  /'__`\\  \\ \\ \\   /'___\\/\\ \\/\\ \\ \\ \\ \\   /'__`\\ \\ \\ \\/  / __`\\/\\`'__\\\n" +
-                "  \\ \\ \\/\\  __/\\ \\ \\//\\ \\__//\\  __//\\ \\/\\ \\ \\ \\_/\\ \\L\\.\\_/\\ \\L\\ \\/\\  __/    \\ \\ \\L\\ \\/\\ \\L\\.\\_ \\_\\ \\_/\\ \\__/\\ \\ \\_\\ \\ \\_\\ \\_/\\ \\L\\.\\_\\ \\ \\_/\\ \\L\\ \\ \\ \\/ \n" +
-                "   \\ \\_\\ \\____\\\\ \\_\\\\ \\____\\ \\____\\ \\_\\ \\_\\ \\__\\ \\__/.\\_\\ \\____ \\ \\____\\    \\ \\____/\\ \\__/.\\_\\/\\____\\ \\____\\\\ \\____/ /\\____\\ \\__/.\\_\\\\ \\__\\ \\____/\\ \\_\\ \n" +
-                "    \\/_/\\/____/ \\/_/ \\/____/\\/____/\\/_/\\/_/\\/__/\\/__/\\/_/\\/___L\\ \\/____/     \\/___/  \\/__/\\/_/\\/____/\\/____/ \\/___/  \\/____/\\/__/\\/_/ \\/__/\\/___/  \\/_/ \n" +
-                "                                                           /\\____/                                                                                      \n" +
-                "                                                           \\_/__/                                                                                       ");
-        System.out.println("Enter Your Name :");
+    static void wrong (){
+        System.out.println("You entered wrong value. Restart the program");
+    }
 
-
+   public static void main(String[] args) throws Exception {
+        System.out.println("Hello, World!");
 
         Scanner input = new Scanner(System.in);
-        String nameOfPerson = input.nextLine();
-        System.out.println("Hello, " + nameOfPerson.toUpperCase());
 
-        // No Of Paper
-        System.out.println("Enter No. Of papers : ");
-        short noOfPapers = input.nextShort();
-        System.out.println(noOfPapers + " Papers . Is that correct ? If correct, Type " + '"' + '1' + '"' + ",  Else wrong , press any number ");
+        System.out.println("Enter your name : ");
+        String userName = input.nextLine();
+        
+        System.out.println("Hello "+ userName.toUpperCase()+", Enter NoOF papers : ");
+        int noOfpapers = input.nextInt();
+        
+        System.out.println("Enter total marks Of Single Paper : ");
+        byte singlePaper = input.nextByte();
 
-        //confirmation
-        float get1 = input.nextFloat();
-        String wrong;
-        wrong = "You Entered Wrong No of paper . so please restart program ";
-        String confirmation = get1 != 1 ? wrong : "ok. Now Enter Full Mark Of Single Paper :";
-        System.out.println(confirmation);
-        //boolean = confirmation == "ok" ?  ;
+        int total =  noOfpapers *  singlePaper ;
 
-        // Total Mark of single paper
-        int totalMarks1paper = input.nextInt();
-        int totalMarkOfAll = totalMarks1paper * noOfPapers;
-        System.out.println(totalMarkOfAll + " was your total marks . Now Enter Your 1st subject Name : ");
+        int totalOfAll = 0 ;
+           
+            int[] mark = new int[noOfpapers+1];
+        for (int i=1 ; i <= noOfpapers ; i++ ){
+           
+            System.out.println("Enter Your " + i + " mark : ");
+            
+            mark[i]=input.nextInt();
 
-        // 1st Subject
-        String sub1Name = input.next();
-        sub1Name = sub1Name.toUpperCase();
-        System.out.println("Enter Your " + sub1Name + " mark :");
-        float sub1Mark = input.nextFloat();
-
-
-        if (sub1Mark <= totalMarks1paper) {
-            System.out.println(sub1Name + " Mark = " + sub1Mark);
-            System.out.println("Now Enter 2nd Subject Name : ");
-        } else{
-            System.out.println(wrongMark);
-        }
-
-        // 2nd Subject
-        String sub2Name = input.next();
-        sub2Name = sub2Name.toUpperCase();
-        System.out.println("Enter Your " + sub2Name + " mark :");
-        float sub2Mark = input.nextFloat();
-
-        if (sub2Mark <= totalMarks1paper) {
-            System.out.println(sub1Name + " Mark = " + sub1Mark);
-            System.out.println(sub2Name + " Mark = " + sub2Mark);
-            System.out.println("Now Enter 3rd Subject Name : ");
-        } else{
-            System.out.println(wrongMark);
-        }
-        // 3rd Subject
-        String sub3Name = input.next();
-        sub3Name = sub3Name.toUpperCase();
-        System.out.println("Enter Your " + sub3Name + " mark :");
-        float sub3Mark = input.nextFloat();
-        if (sub3Mark <= totalMarks1paper) {
-            System.out.println(sub1Name + " Mark = " + sub1Mark);
-            System.out.println(sub2Name + " Mark = " + sub2Mark);
-            System.out.println(sub3Name + " Mark = " + sub3Mark);
-            System.out.println("Now Enter 4th Subject Name : ");
-        } else {
-            System.out.println(wrongMark);
-        }
-        // 4th subject
-        String sub4Name = input.next();
-        sub4Name = sub4Name.toUpperCase();
-        System.out.println("Enter Your " + sub4Name + " mark :");
-        float sub4Mark = input.nextFloat();
-
-        if (sub4Mark <= totalMarks1paper) {
-            System.out.println(sub1Name + " Mark = " + sub1Mark);
-            System.out.println(sub2Name + " Mark = " + sub2Mark);
-            System.out.println(sub3Name + " Mark = " + sub3Mark);
-            System.out.println(sub4Mark + " Mark = " + sub4Mark);
-            System.out.println("Now Enter 5th Subject Name :");
-        } else {
-            System.out.println(wrongMark);}
-
-
-            // 5 th Subject
-            String sub5Name = input.next();
-            sub5Name = sub5Name.toUpperCase();
-            System.out.println("Enter Your " + sub5Name + " mark :");
-            float sub5Mark = input.nextFloat();
-
-            if (sub5Mark <= totalMarks1paper) {
-                System.out.println(sub1Name + " Mark = " + sub1Mark);
-                System.out.println(sub2Name + " Mark = " + sub2Mark);
-                System.out.println(sub3Name + " Mark = " + sub3Mark);
-                System.out.println(sub4Mark + " Mark = " + sub4Mark);
-                System.out.println(sub5Mark + " Mark = " + sub5Mark);
-                System.out.println("Now Enter 6th Subject Name :");
-            } else {
-                System.out.println(wrongMark);}
-
-
-                // 6th Subject
-                String sub6Name = input.next();
-                sub6Name = sub6Name.toUpperCase(Locale.ROOT);
-                System.out.println("Enter Your " + sub6Name + " mark : ");
-                float sub6Mark = input.nextFloat();
-
-                if (sub6Mark <= totalMarks1paper) {
-                    System.out.println(sub1Name + " Mark = " + sub1Mark);
-                    System.out.println(sub2Name + " Mark = " + sub2Mark);
-                    System.out.println(sub3Name + " Mark = " + sub3Mark);
-                    System.out.println(sub4Name + " Mark = " + sub4Mark);
-                    System.out.println(sub5Name + " Mark = " + sub5Mark);
-                    System.out.println(sub6Name + " Mark = " + sub6Mark);
-                    System.out.println("Enter Your 7th Subject Name:; ");
-                } else {
-                    System.out.println(wrongMark);}
-
-                    // 7th Subject
-                    String sub7Name = input.next();
-                    sub7Name = sub7Name.toUpperCase();
-                    System.out.println("Enter Your " + sub7Name + " mark : ");
-                    float sub7Mark = input.nextFloat();
-
-                    if (sub7Mark <= totalMarks1paper) {
-                        System.out.println(sub1Name + " Mark = " + sub1Mark);
-                        System.out.println(sub2Name + " Mark = " + sub2Mark);
-                        System.out.println(sub3Name + " Mark = " + sub3Mark);
-                        System.out.println(sub4Name + " Mark = " + sub4Mark);
-                        System.out.println(sub5Name + " Mark = " + sub5Mark);
-                        System.out.println(sub6Name + " Mark = " + sub6Mark);
-                        System.out.println(sub7Name + " Mark + " + sub7Mark);
-                    } else {
-                        System.out.println(wrongMark);}
-
-
-                        //Total
-                        float total = sub1Mark + sub2Mark + sub3Mark + sub4Mark + sub5Mark + sub6Mark + sub7Mark;
-                        float percentage = (total / (noOfPapers * totalMarks1paper)) ;
-                        percentage *= 100 ;
-                        System.out.println("Your ( " + nameOfPerson.toUpperCase() + " ) Total Marks = " + total + '/'+ totalMarkOfAll);
-                        System.out.println("Your ( " + nameOfPerson.toUpperCase() + " ) Percentage = " + percentage +" %");
-
-
-                    }
-                }
+            totalOfAll =totalOfAll + mark[i];
+  
+                if (mark[i]>singlePaper){
+                    wrong();
+                    break;}
+        
+                else if(i==noOfpapers) {
+                    double percentage = (double) totalOfAll*100 ;
+                    percentage /= total;
+                System.out.println("Your Total Marks  : "+totalOfAll + "/" + total);
+                System.out.println("Your Percentage was  : " + percentage );break;
+                }    
+          } 
+    }
+}
